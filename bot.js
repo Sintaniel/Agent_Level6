@@ -1,9 +1,8 @@
 const Discord = require('discord.io');
-const token = process.env.BOT_TOKEN;
 
 // Initialize Discord Bot
 var bot = new Discord.Client({
-   token,
+   token: process.env.BOT_TOKEN,
    autorun: true
 });
 
