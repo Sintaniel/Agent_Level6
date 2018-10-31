@@ -2,7 +2,7 @@ const Discord = require('discord.io');
 
 // Initialize Discord Bot
 const bot = new Discord.Client({
-   bottoken,
+   process.env.bottoken,
    autorun: true
 });
 //bot.login(process.env.bottoken);
