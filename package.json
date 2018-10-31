@@ -9,6 +9,6 @@
     "author": "Mr_Johnsonn",
     "dependencies": {
         "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
-        "winston": "http://github.com/winstonjs/winston"
+        "winston": "https://github.com/winstonjs/winston"
     }
 }
