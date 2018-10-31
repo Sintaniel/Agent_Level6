@@ -8,7 +8,6 @@
     },
     "author": "Mr_Johnsonn",
     "dependencies": {
-        "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
-        "winston": "https://github.com/winstonjs/winston"
+        "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6"
     }
 }
