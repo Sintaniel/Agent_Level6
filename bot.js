@@ -1,10 +1,8 @@
 var Discord = require('discord.io');
 
 // Initialize Discord Bot
-var bot = new Discord.Client({
-   token: BOT_TOKEN,
-   autorun: true
-});
+var bot = new Discord.Client();
+bot.login(process.env.BOT_TOKEN);
 bot.on('ready', function (evt) {
     console.log('I am ready!');
 });
