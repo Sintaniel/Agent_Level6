@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "description": "Little helper for SH games",
     "main": "bot.js",
+    "scripts": {
+    "start": "node bot.js"
+    },
     "author": "Mr_Johnsonn",
     "dependencies": {
         "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
