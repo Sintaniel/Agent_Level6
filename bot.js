@@ -76,7 +76,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
             case 'ah':
             bot.sendMessage({
                 to: channelID,
-                message:createStrings("```css\n Little helper for Shadowrun games.\nType x[y] for simple roll, where x is your dicepool, y - your limit;\nType x[y](z) for extended test, where z is number you need.\n```\n", user)
+                message:createStrings("```css\n Little helper for Shadowrun games.\nType /ar x[y] for simple roll, where x is your dicepool, y - your limit;\nType /are x[y](z) for extended test, where z is number you need.\n```\n", user)
             });
             break;
             // Just add any case commands if you want to..
