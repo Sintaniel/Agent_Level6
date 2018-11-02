@@ -117,7 +117,7 @@ function genExtDice(dNum, limit, threshold){
     }
 
     text = text + "```css\n";
-    if(fCount >= threshold){
+    if(fCount >= threshold && !crGlitch){
         text = text + "\nYOU WIN!";
         text = text + "\nINTERVALS SPEND: " + hCount;
     }else{
