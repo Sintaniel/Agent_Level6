@@ -2,8 +2,8 @@ var Discord = require('discord.io');
 //var auth = require('./auth.json');
 
 var {MongoClient} = require('mongodb');
-var uri = auth.uri || process.env.URI;
-var token = auth.token || process.env.BOT_TOKEN;
+var uri = process.env.URI;
+var token = process.env.BOT_TOKEN;
 
 
 // Initialize Discord Bot
