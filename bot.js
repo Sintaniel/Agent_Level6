@@ -95,7 +95,7 @@ bot.on('message', async function (user, userID, channelID, message, evt) {
             case 'ah':
             bot.sendMessage({
                 to: channelID,
-                message:createStrings("```css\n Little helper for Shadowrun games.\nType /ar x[y] for simple roll, where x is your dicepool, y - your limit;\nType /are x[y](z) for extended test, where z is number you need;\nType /ama l for list of matrix actions and /ama x, where x is name of matrix action.```\n", user)
+                message:createStrings("```css\n Little helper for Shadowrun games.\nType /ar x[y] for simple roll, where x is your dicepool, y - your limit;\nType /ar x for roll without limit, /ar x! for push the limit;\nType /are x[y](z) for extended test, where z is number you need;\nType /ama l for list of matrix actions and /ama x, where x is name of matrix action.```\n", user)
             });
             break;
             //matrix actions
