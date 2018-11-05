@@ -120,14 +120,19 @@ bot.on('message', async function (user, userID, channelID, message, evt) {
                 }
             break;
             
-            //simple roll
+           //simple roll
             case 'ar':
                 var diceCount;
                 var limit;
+                var push = false;
                 if(args.length == 2){
                     next = args[1];
                     var formDices = next.substring(0).split(/[\[\]]/);
                     if (formDices.length == 1 && Number.isInteger(parseInt(formDices[0]))){
+                        if(formDices[0].match(/\!$/)){
+                            console.log("explosion time!");
+                            push = true;
+                        };
                         diceCount = parseInt(formDices[0]);
                         limit = diceCount;
                     }else{
@@ -143,10 +148,10 @@ bot.on('message', async function (user, userID, channelID, message, evt) {
                         }
                     }
                 }
-                checkNextMsg(next,createStrings(genDices(diceCount, limit), user), channelID);
+                checkNextMsg(next,createStrings(genDices(diceCount, limit, push), user), channelID);
                                
             break;
-            
+              
             //extended roll
             case 'are':
                 var diceCount;
@@ -216,23 +221,33 @@ function createLOfOperations(arr){
     return line;
 };
 
-function genDices(dNum, limit){
+function genDices(dNum, limit, push){
     var text;
     var sucCount = 0;
     var oneCount = 0;
+    var pCount = 0;
     var critCount = false;
-    for(var i = 1; i<=dNum; i++){
+    var pushCh = push;
+    for(var i = 1; i<=dNum+pCount; i++){
         var num = Math.floor(Math.random()*6)+1;
         if (num < 5){
             if(num == 1){
                 oneCount++;
             };
             num = "~~" + num + "~~";
-        }else if(sucCount < limit){
+        }else if(!push && sucCount < limit){
             critCount = true;
             sucCount++;
             num = "**" + num + "**";
-        };
+        }else if(num >= 5){
+            if (pushCh && num == 6){
+                pCount++;
+            }
+            critCount = true;
+            sucCount++;
+            num = "**" + num + "**";
+        }
+        
         if(text == null){
             text = num.toString() + " ";
         }else{
@@ -241,7 +256,7 @@ function genDices(dNum, limit){
     }
     text = text + "\n```css\n";
     text = text + "\nSUCCESSES: " + sucCount;
-    if (oneCount*2 >= dNum){
+    if (oneCount*2 >= dNum+pCount){
         if(critCount){
             text = text + "\n[GLITCH!]";
         }else{
