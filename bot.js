@@ -143,6 +143,7 @@ bot.on('message', async function (user, userID, channelID, message, evt) {
                         }
                         if(Number.isInteger(parseInt(formDices[1]))){
                             limit = parseInt(formDices[1]);
+                            console.log("limin in: " + limit);
                         }else{
                             next = null;
                         }
