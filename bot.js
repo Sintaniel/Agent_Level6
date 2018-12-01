@@ -235,7 +235,7 @@ function genDices(dNum, limit, push){
                 oneCount++;
             };
             num = "~~" + num + "~~";
-        }else if(!push && sucCount < limit){
+        }else if(!push && sucCount <= limit){
             critCount = true;
             sucCount++;
             num = "**" + num + "**";
