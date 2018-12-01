@@ -237,16 +237,14 @@ function genDices(dNum, limit, push){
             };
             num = "~~" + num + "~~";
         }else if(!pushCh && sucCount <= limit){
-            console.log(" suc: " + sucCount);
-            console.log(" limit: " + limit);
-            console.log(" push is: " + pushCh);
             critCount = true;
             sucCount++;
             num = "**" + num + "**";
-        }else if(num >= 5){
-            if (pushCh && num == 6){
+        }else if(pushCh && num >= 5){
+            if (num == 6){
                 pCount++;
             }
+            console.log(" its a push and push is: " + pushCh);
             critCount = true;
             sucCount++;
             num = "**" + num + "**";
@@ -258,6 +256,10 @@ function genDices(dNum, limit, push){
             text =text + num + " ";
         }
     }
+    
+            console.log(" suc: " + sucCount);
+            console.log(" limit: " + limit);
+            console.log(" push is: " + pushCh);
     text = text + "\n```css\n";
     text = text + "\nSUCCESSES: " + sucCount;
     if (oneCount*2 >= dNum+pCount){
