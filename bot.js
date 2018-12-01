@@ -236,7 +236,10 @@ function genDices(dNum, limit, push){
                 oneCount++;
             };
             num = "~~" + num + "~~";
-        }else if(!push && sucCount <= limit){
+        }else if(!pushCh && sucCount <= limit){
+            console.log(" suc: " + sucCount);
+            console.log(" limit: " + limit);
+            console.log(" push is: " + pushCh);
             critCount = true;
             sucCount++;
             num = "**" + num + "**";
